@@ -1,0 +1,7 @@
+{
+  "name": "monica-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
