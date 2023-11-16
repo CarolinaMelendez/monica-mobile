@@ -1,0 +1,17 @@
+.center-vertically {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.custom-card {
+border: 1px solid #d3d3d3; /* Bordes de 10px de color plomo claro */
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding:10px;
+}
+
