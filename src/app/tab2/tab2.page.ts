@@ -1,5 +1,6 @@
 import { Component,ViewChild,ElementRef,AfterViewInit,ViewContainerRef  } from '@angular/core';
 import { SmallCardComponent } from '../small-card/small-card.component';
+import { IonSelect } from '@ionic/angular';
 interface AirQualityMessages {
   [key: string]: string[];
 }
@@ -44,6 +45,10 @@ const careMessagesGeneral: AirQualityMessages = {
 })
 
 export class Tab2Page {
+  selectedStation: string;
+  //selectedStation: string = 'semapa';
+  @ViewChild('stationSelect') stationSelect: IonSelect;
+
   mainImages: string[] = ['./buena1.png', './regular1.png','./mala1.png', './muymala1.png'];
   messages: string[] = ['Buena', 'Regular', 'Mala', 'Muy mala', 'Extremadamente mala'];
   // Mensajes de calidad del aire
@@ -102,7 +107,7 @@ export class Tab2Page {
     'Muy mala': [
       'assets/img/./mala1.png',
       'assets/img/./muymala2.PNG',
-      'assets/img/./muymala3.png',
+      'assets/img/./mala1.png',
       'assets/img/./muymala4.png',
     ],
     'Extremadamente mala': [
@@ -148,6 +153,10 @@ export class Tab2Page {
       default:
         return 'white';
     }
+  }
+
+  openStationSelect() {
+    this.stationSelect.open();
   }
 }
 

@@ -7,7 +7,7 @@
 -->
 
 <!-- Principal card -->
-<ion-card style="position: absolute; top: 5%; left: 8%; right: 8%; text-align: center; padding:5px; border-radius: 24px; height: 210px">
+<ion-card style="position: absolute; top: 3%; left: 8%; right: 8%; text-align: center; padding:5px; border-radius: 24px; height: 250px">
   <ion-grid>
     <!-- Primera Fila -->
     <ion-row class="ion-align-items-center" >
@@ -17,8 +17,16 @@
       </ion-col>
       <!-- Columna 2: Variable y Icono de Lugar -->
       <ion-col size="6">
-        <ion-label style="font-size: 12px; font-weight: bold; color: rgb(75, 74, 74);">Semapa</ion-label>
-        <ion-icon name="location" size="large"></ion-icon>
+        <ion-item>
+          <ion-label style="font-size: 12px; font-weight: bold; color: rgb(75, 74, 74);">{{ selectedStation }}</ion-label>
+          <ion-icon name="location" size="large" (click)="openStationSelect()"></ion-icon>
+          <!-- <ion-select [(ngModel)]="selectedStation" (ionChange)="onStationChange($event)" #stationSelect> -->
+          <ion-select [(ngModel)]="selectedStation" #stationSelect> 
+            <ion-select-option value="semapa">Semapa</ion-select-option>
+            <ion-select-option value="fuerzaAerea">Fuerza Aérea</ion-select-option>
+            <ion-select-option value="kanata">Kanata</ion-select-option>
+          </ion-select>
+        </ion-item>
         <!-- Agrega aquí tu icono de lugar -->
       </ion-col>
     </ion-row>
@@ -68,7 +76,7 @@
 
 
 <!-- main-page.component.html -->
-<ion-content style="position: absolute; top: 35%; left: 0; right: 0; bottom: 0; border-top-left-radius: 100px; overflow: hidden;">
+<ion-content style="position: absolute; top: 37%; left: 0; right: 0; bottom: 0; border-top-left-radius: 100px; overflow: hidden;">
   <!-- Primera Fila -->
   <ion-row class="ion-justify-content-center">
     <ion-col size="12" style="margin-top: 40px;">
