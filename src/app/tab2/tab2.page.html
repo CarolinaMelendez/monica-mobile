@@ -1,55 +1,62 @@
-<!-- Fondo de color celeste / imagen
-<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, #eaf5f8, #1aa3cc); z-index: -1;"></div>
+<!-- Fondo de color lila / imagen 
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, hsl(193, 50%, 95%), rgb(186, 37, 95)); z-index: -1;"></div>
 -->
+<div [style.background-color]="getColor(message)" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1;"></div>
+<!-- imagen de fondo
 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('assets/img/back.png'); background-size: cover; background-position: center; z-index: -1;"></div>
-
-<!-- Emoji figure 
-<ion-card style="position: absolute; top: 2%; left: 15%; right: 15%; text-align: center; box-shadow: none; background-color: rgb(255, 255, 255); padding:30px;">
-  <img [src]="mainImage" style="flex: 1; max-width: 50%; padding: 10px;">
-  <div style="flex: 2; padding: 10px;">
-    <ion-label style="font-size: 16px;">Línea 1</ion-label>
-    <ion-label style="font-size: 16px;">Línea 2</ion-label>
-    <ion-label style="font-size: 16px;">Línea 3</ion-label>
-  </div>
-</ion-card>
 -->
-<ion-card style="position: absolute; top: 5%; left: 8%; right: 8%; text-align: center; padding:5px; border-radius: 10px;">
+
+<!-- Principal card -->
+<ion-card style="position: absolute; top: 5%; left: 8%; right: 8%; text-align: center; padding:5px; border-radius: 24px; height: 210px">
   <ion-grid>
-    <ion-row >
-      <!-- Columna para la imagen (lado izquierdo) -->
-      <ion-col size="6" class="center-vertically">
-        <ion-img [src]="mainImage"></ion-img>
-      </ion-col>
-
-      <!-- Columna para el texto (lado derecho) -->
+    <!-- Primera Fila -->
+    <ion-row class="ion-align-items-center" >
+      <!-- Columna 1: "ICA:" -->
       <ion-col size="6">
-        <!-- Línea de texto 1 -->
+        <ion-label style="font-size: 24px; font-weight: bold; color: rgb(75, 74, 74);">ICA:</ion-label>
+      </ion-col>
+      <!-- Columna 2: Variable y Icono de Lugar -->
+      <ion-col size="6">
+        <ion-label style="font-size: 12px; font-weight: bold; color: rgb(75, 74, 74);">Semapa</ion-label>
+        <ion-icon name="location" size="large"></ion-icon>
+        <!-- Agrega aquí tu icono de lugar -->
+      </ion-col>
+    </ion-row>
+
+    <!-- Segunda Fila -->
+    <ion-row>
+      <!-- Columna única: Número grande -->
+      <ion-col size="12">
         <ion-text>
-          <ion-label style="font-size: 20px; font-weight: bold; color: rgb(75, 74, 74);">Calidad del aire </ion-label>
-        </ion-text>
-        <!-- Línea de texto 2 -->
-        <ion-text>
-          <ion-card [style.background-color]="getColor(message)">
-            <ion-card-content>
-              <ion-label style="font-size: 20px; font-weight: bold; color: white;">{{ message }}    </ion-label>
-            </ion-card-content>
-          </ion-card>
-        </ion-text>
-        <!-- Línea de texto 3 -->
-        <ion-text>
-          <p>Zona: </p>
+          <h1 style="font-size: 36px; font-weight: bold;">34</h1>
         </ion-text>
       </ion-col>
-
     </ion-row>
+
+    <!-- Tercera Fila -->
+    <ion-row class="ion-align-items-center">
+      <!-- Columna única: Texto con fondo lila y color blanco -->
+      <ion-col size="12" class="ion-align-items-center">
+        <ion-card [style.background-color]="getColor(message)" style="border-radius: 50px; width: 80% ; margin: 0 auto;">
+          <ion-card-content>
+            <ion-label style="font-size: 16px; font-weight: bold; color: white;">{{ message }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 </ion-card>
 
 
-<!-- message short of level -->
+
+
+
+<!-- message short of level 
 <div style="position: absolute; bottom: 62%; left: 8%; right: 8%; text-align: center;">
   <ion-label style="font-size: 30px; font-weight: bold; color: rgb(75, 74, 74);"> A tomar en cuenta¡ </ion-label>
 </div>
+-->
 
 <!-- message long of care
 <ion-card style="position: absolute; top: 50%; left: 8%; right: 8%; text-align: center; box-shadow: none; background-color: rgba(255, 255, 255, 0.322)">
@@ -59,53 +66,33 @@
 </ion-card>
 -->
 
-<ion-grid style="position: absolute; top: 40%; left: 10%; right: 10%;" >
-  <ion-row>
-    <ion-col size="6">
-      <ion-card class="custom-card" class="custom-img">
-        <ion-img src='assets/img/mask.PNG' class="custom-img"></ion-img>
-        <ion-card-header>
-          <ion-card-title>Usar barbijo</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Usa barbijo al salir de casa para prevenir.
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col size="6">
-      <ion-card class="custom-card" >
-        <ion-img src='assets/img/runner.png' class="custom-img"></ion-img>
-        <ion-card-header>
-          <ion-card-title>Salir afuera</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Sal a trotar a caminar, el aire esta limpio.
-        </ion-card-content>
-      </ion-card>
+
+<!-- main-page.component.html -->
+<ion-content style="position: absolute; top: 35%; left: 0; right: 0; bottom: 0; border-top-left-radius: 100px; overflow: hidden;">
+  <!-- Primera Fila -->
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12" style="margin-top: 40px;">
+      <ion-label style="font-size: 20px; font-weight: bold; margin-left: 15%;">A tomar en cuenta¡</ion-label>
     </ion-col>
   </ion-row>
-  <ion-row>
+
+  <!-- Segunda Fila -->
+  <ion-row style="margin-left: 40px; margin-right: 40px; margin-top: 0%;">
     <ion-col size="6">
-      <ion-card class="custom-card" >
-        <ion-img src='assets/img/window.png' class="custom-img"></ion-img>
-        <ion-card-header>
-          <ion-card-title>Abrir ventanas</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Haz que ventile el aire por tus habitaciones.
-        </ion-card-content>
-      </ion-card>
+      <app-small-card [imageUrl]="linkImage[0]" [textContent]="careMessage[0]"></app-small-card>
     </ion-col>
     <ion-col size="6">
-      <ion-card class="custom-card" >
-        <ion-img src='assets/img/home.png' class="custom-img"></ion-img>
-        <ion-card-header>
-          <ion-card-title>Permanecer en interiores</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Evita actividades al aire libre.
-        </ion-card-content>
-      </ion-card>
+      <app-small-card [imageUrl]="linkImage[1]" [textContent]="careMessage[1]"></app-small-card>
     </ion-col>
   </ion-row>
-</ion-grid>
+
+  <!-- Tercera Fila -->
+  <ion-row style="margin-left: 40px; margin-right: 40px; margin-top: 30px;">
+    <ion-col size="6">
+      <app-small-card [imageUrl]="linkImage[2]" [textContent]="careMessage[2]"></app-small-card>
+    </ion-col>
+    <ion-col size="6">
+      <app-small-card [imageUrl]="linkImage[3]" [textContent]="careMessage[3]"></app-small-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

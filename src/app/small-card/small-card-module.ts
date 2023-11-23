@@ -2,21 +2,22 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab2Page } from './tab2.page';
+import { SmallCardComponent } from './small-card.component';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab2PageRoutingModule } from './tab2-routing.module';
-import { SmallCardModule } from '../small-card/small-card-module';
 
+import { SmallCardComponentRoutingModule } from './small-card-routing.module';
+import { MoreInfoModalPageModule } from '../more-info-model/more-info-model.module';
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule,
-    SmallCardModule
+    SmallCardComponentRoutingModule,
+    MoreInfoModalPageModule
   ],
-  declarations: [Tab2Page]
+  declarations: [SmallCardComponent],
+  exports: [SmallCardComponent],
 })
-export class Tab2PageModule {}
+export class SmallCardModule {} 
