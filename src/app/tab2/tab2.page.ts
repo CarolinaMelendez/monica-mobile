@@ -1,42 +1,9 @@
 import { Component,ViewChild,ElementRef,AfterViewInit,ViewContainerRef  } from '@angular/core';
-import { SmallCardComponent } from '../small-card/small-card.component';
 import { IonSelect } from '@ionic/angular';
 interface AirQualityMessages {
   [key: string]: string[];
 }
 
-const careMessagesGeneral: AirQualityMessages = {
-  'Buena': [
-    "Respira profundo, aire fresco.",
-    "Disfruta del día, sin preocupaciones.",
-    "Actívate al aire libre hoy.",
-    "¡Excelente día para actividades!"
-  ],
-  'Regular': [
-    "Protégete, aire no óptimo.",
-    "Considera usar máscara temporalmente.",
-    "Reduce exposición, precaución necesaria.",
-    "Pausa deportes intensos, precaución."
-  ],
-  'Mala': [
-    "Evita esfuerzos, cuida tu salud.",
-    "Usa mascarilla en exteriores.",
-    "Limita tiempo al aire libre.",
-    "Precaución extra en grupos."
-  ],
-  'Muy mala': [
-    "Quédate en interiores, precaución.",
-    "Mascarilla es esencial afuera.",
-    "Limítate a actividades suaves.",
-    "Protege ojos y nariz."
-  ],
-  'Extremadamente mala': [
-    "Permanece en interiores, urgente.",
-    "Mascarilla necesaria siempre.",
-    "Evita cualquier actividad física.",
-    "Consulta a un profesional médico."
-  ]
-};
 
 @Component({
   selector: 'app-tab2',
@@ -118,11 +85,46 @@ export class Tab2Page {
     ]
   };
 
+  careMessagesDetailed: AirQualityMessages = {
+    'Buena': [
+      "Experimenta la frescura al inhalar profundamente, llenando cada rincón de tus pulmones.",
+      "Siente cómo cada célula se revitaliza con el puro abrazo del oxígeno fresco.",
+      "Recarga tu energía vital con cada inhalación consciente en este día de aire impecable.",
+      "Optimiza tu bienestar y conecta con la armonía natural que te rodea."
+    ],
+    'Regular': [
+      "Protege tu salud en entornos con calidad de aire menos óptima, priorizando lugares cerrados.",
+      "Considera el uso de mascarillas para reducir la exposición a partículas perjudiciales.",
+      "Elige ambientes con filtración de aire para minimizar riesgos.",
+      "Adapta tus actividades físicas, siendo consciente de las condiciones ambientales."
+    ],
+    'Mala': [
+      "Preserva tu bienestar evitando esfuerzos físicos intensos en días de calidad del aire disminuida.",
+      "Usa mascarilla al aire libre para protegerte de partículas y limita el tiempo en exteriores.",
+      "Prioriza entornos controlados y minimiza la exposición a posibles contaminantes.",
+      "Toma precauciones adicionales al interactuar en grupos, protegiendo tu salud en todo momento."
+    ],
+    'Muy mala': [
+      "Refúgiate en interiores para minimizar la exposición a contaminantes en días de calidad del aire muy baja.",
+      "La mascarilla se vuelve esencial para proteger tus vías respiratorias de partículas nocivas.",
+      "Elige actividades suaves que no comprometan tu salud respiratoria y ocular.",
+      "Protege tus ojos y nariz de posibles irritantes en el aire, priorizando tu bienestar."
+    ],
+    'Extremadamente mala': [
+      "Permanece en interiores de manera urgente para salvaguardar tu salud en condiciones críticas de calidad del aire.",
+      "El uso constante de mascarillas es necesario incluso en distancias cortas al salir.",
+      "Evita cualquier esfuerzo físico para reducir riesgos, priorizando tu seguridad y bienestar.",
+      "Ante cualquier síntoma o malestar, busca asesoramiento médico profesional de inmediato."
+    ]
+  };
+  
+
   mainImage: string = 'assets/img/' + this.mainImages[0];
   linkImage: string[] = this.linkImages['Buena'];
   message: string = this.messages[0];
   careMessage: string[] = this.careMessages['Buena'];
   currentIndex: number = 0;
+  careMessageDetailed: string[];
 
   constructor() {
   }
@@ -135,6 +137,7 @@ export class Tab2Page {
       this.message = this.messages[this.currentIndex];
       this.careMessage = this.careMessages[this.message];
       this.linkImage = this.linkImages[this.message];
+      this.careMessageDetailed = this.careMessagesDetailed[this.message];
     }, 5000);
   }
 

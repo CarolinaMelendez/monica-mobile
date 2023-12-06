@@ -9,8 +9,7 @@ import { MoreInfoModalPage } from '../more-info-model/more-info-modal.page';
 export class SmallCardComponent {
   @Input() imageUrl: string;
   @Input() textContent: string;
-  //imageUrl!: string;
-  //textContent!: string;
+  @Input() textContentDetailed: string;
 
   constructor(private modalController: ModalController) {}
 
@@ -20,7 +19,10 @@ export class SmallCardComponent {
       componentProps: {
         imageUrl: this.imageUrl,
         textContent: this.textContent,
+        textContentDetailed: this.textContentDetailed,
       },
+      cssClass: 'my-custom-modal', // Puedes agregar una clase de estilo personalizado
+      backdropDismiss: false, // Para deshabilitar el cierre al hacer clic fuera del modal
     });
     return await modal.present();
   }

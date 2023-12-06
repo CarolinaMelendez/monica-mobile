@@ -12,6 +12,7 @@ export class MoreInfoModalPage {
   
   imageUrl!: string;
   textContent!: string;
+  textContentDetailed!: string;
 
   constructor(private modalController: ModalController) {}
 
