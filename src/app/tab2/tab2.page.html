@@ -13,12 +13,12 @@
     <ion-row class="ion-align-items-center" >
       <!-- Columna 1: "ICA:" -->
       <ion-col size="6">
-        <ion-label style="font-size: 24px; font-weight: bold; color: rgb(75, 74, 74);">ICA:</ion-label>
+        <ion-label style="font-size: 24px; font-weight: bold; color: rgb(75, 74, 74); font-family: 'Fredoka', sans-serif;">ICA:</ion-label>
       </ion-col>
       <!-- Columna 2: Variable y Icono de Lugar -->
       <ion-col size="6">
         <ion-item>
-          <ion-label style="font-size: 12px; font-weight: bold; color: rgb(75, 74, 74);">{{ selectedStation }}</ion-label>
+          <ion-label style="font-size: 12px; font-weight: bold; color: rgb(75, 74, 74); font-family: 'Fredoka', sans-serif;">{{ selectedStation }}</ion-label>
           <ion-icon name="location" size="large" (click)="openStationSelect()"></ion-icon>
           <!-- <ion-select [(ngModel)]="selectedStation" (ionChange)="onStationChange($event)" #stationSelect> -->
           <ion-select [(ngModel)]="selectedStation" #stationSelect> 
@@ -36,7 +36,7 @@
       <!-- Columna única: Número grande -->
       <ion-col size="12">
         <ion-text>
-          <h1 style="font-size: 36px; font-weight: bold;">34</h1>
+          <h1 style="font-size: 36px; font-weight: bold;font-family: 'Fredoka', sans-serif;">34</h1>
         </ion-text>
       </ion-col>
     </ion-row>
@@ -45,7 +45,7 @@
     <ion-row class="ion-align-items-center">
       <!-- Columna única: Texto con fondo lila y color blanco -->
       <ion-col size="12" class="ion-align-items-center">
-        <ion-card [style.background-color]="getColor(message)" style="border-radius: 50px; width: 80% ; margin: 0 auto;">
+        <ion-card [style.background-color]="getColor(message)" style="border-radius: 50px; width: 80% ; margin: 0 auto;font-family: 'Fredoka', sans-serif;">
           <ion-card-content>
             <ion-label style="font-size: 16px; font-weight: bold; color: white;">{{ message }}</ion-label>
           </ion-card-content>
@@ -62,7 +62,7 @@
   <!-- Primera Fila -->
   <ion-row class="ion-justify-content-center">
     <ion-col size="12" style="margin-top: 40px;">
-      <ion-label style="font-size: 20px; font-weight: bold; margin-left: 15%;">A tomar en cuenta¡</ion-label>
+      <ion-label style="font-size: 20px; font-weight: bold; margin-left: 15%;font-family: 'Fredoka', sans-serif;">A tomar en cuenta¡</ion-label>
     </ion-col>
   </ion-row>
 

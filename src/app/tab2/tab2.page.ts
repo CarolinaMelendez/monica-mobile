@@ -130,6 +130,7 @@ export class Tab2Page {
   }
 
   ngOnInit(): void {
+    //this.stationSelect.label  =  'Semapa';
     // Iniciar el temporizador para cambiar de elemento cada 5 segundos
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.messages.length;
