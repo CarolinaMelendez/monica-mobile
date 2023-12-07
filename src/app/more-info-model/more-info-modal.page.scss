@@ -1,0 +1,24 @@
+
+
+ion-card-header {
+    font-family: 'Fredoka', sans-serif; /* Cambia 'TuTipoDeLetra' por el tipo de letra que prefieras */
+    text-align: center; /* Centra el texto */
+    border-radius: 15px; /* Ajusta el valor según tus preferencias para hacer esquinas redondeadas */
+    background-color: #f0f0f0; /* Cambia el color de fondo según tus preferencias */
+    padding: 10px; /* Ajusta el espacio interior según tus preferencias */
+  }
+
+
+
+  ion-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  ion-label {
+    font-family: 'Fredoka', sans-serif; /* Reemplaza 'TuTipoDeLetra' con tu tipo de letra preferido */
+    margin-top: 50px; /* Ajusta el espacio superior según tus preferencias */
+  }

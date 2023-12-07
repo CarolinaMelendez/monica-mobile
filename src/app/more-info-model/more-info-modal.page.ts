@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-more-info-modal',
   templateUrl: 'more-info-modal.page.html',
+  styleUrls: ['./more-info-modal.page.scss']
 })
 export class MoreInfoModalPage {
   //@Input() imageUrl: string;
